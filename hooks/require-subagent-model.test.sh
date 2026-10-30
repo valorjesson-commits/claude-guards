@@ -8,7 +8,10 @@ check() { # expected-exit tool_input-json
 }
 check 2 '{"prompt":"x"}'
 check 2 '{"prompt":"x","subagent_type":"Explore","model":""}'
+check 2 '{"prompt":"x","model":"   "}'
+check 2 '{"prompt":"x","model":null}'
 check 0 '{"prompt":"x","model":"haiku"}'
 check 0 '{"prompt":"x","subagent_type":"fork"}'
+check 0 '{"prompt":"x","subagent_type":"Fork"}'
 [ $fail = 0 ] && echo ok
 exit $fail
