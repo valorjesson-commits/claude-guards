@@ -7,6 +7,16 @@ PreToolUse hooks for Claude Code that refuse a tool call at the point of the mis
 
 Needs `sh` and `jq`.
 
+## Subagent model policy
+
+`require-subagent-model` enforces explicit model choice on Agent calls (except forks). Use this compatibility guide:
+
+| Work type | Recommended model family |
+|---|---|
+| Search, read, mechanical edits | haiku |
+| Normal coding and review | sonnet |
+| Hard reasoning only | opus/fable |
+
 ## Install
 
 ```
